@@ -139,6 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\MyGCC_Project\MyGCC_Project\Exception.cpp" />
+    <ClCompile Include="..\..\MyGCC_Project\MyGCC_Project\Utility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\MyGCC_Project\MyGCC_Project\Debugger.h" />
+    <ClInclude Include="..\..\MyGCC_Project\MyGCC_Project\Exception.h" />
+    <ClInclude Include="..\..\MyGCC_Project\MyGCC_Project\Logger.h" />
+    <ClInclude Include="..\..\MyGCC_Project\MyGCC_Project\Utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
