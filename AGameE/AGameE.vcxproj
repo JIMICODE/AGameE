@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Common\Utility.h" />
+    <ClInclude Include="Source\Debug\Debugger.h" />
+    <ClInclude Include="Source\Debug\Exception.h" />
+    <ClInclude Include="Source\Debug\Logger.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Common\Utility.cpp" />
+    <ClCompile Include="Source\Debug\Exception.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{4DEEBF00-D8D6-498F-94DD-2F290B4C720E}</ProjectGuid>
@@ -138,16 +148,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\MyGCC_Project\MyGCC_Project\Exception.cpp" />
-    <ClCompile Include="..\..\MyGCC_Project\MyGCC_Project\Utility.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\MyGCC_Project\MyGCC_Project\Debugger.h" />
-    <ClInclude Include="..\..\MyGCC_Project\MyGCC_Project\Exception.h" />
-    <ClInclude Include="..\..\MyGCC_Project\MyGCC_Project\Logger.h" />
-    <ClInclude Include="..\..\MyGCC_Project\MyGCC_Project\Utility.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
