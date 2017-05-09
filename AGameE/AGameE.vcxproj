@@ -19,14 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Common\Utility.cpp" />
+    <ClCompile Include="Source\Debug\Exception.cpp" />
+    <ClCompile Include="Source\Main\Init.cpp" />
+    <ClCompile Include="Source\Main\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="Source\Common\Utility.h" />
     <ClInclude Include="Source\Debug\Debugger.h" />
     <ClInclude Include="Source\Debug\Exception.h" />
     <ClInclude Include="Source\Debug\Logger.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Source\Common\Utility.cpp" />
-    <ClCompile Include="Source\Debug\Exception.cpp" />
+    <ClInclude Include="Source\Main\Init.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -4,6 +4,8 @@
 
 #include<Windows.h>
 #include<string>
+#include<cassert>
+#include<WinUser.h>
 
 inline std::wstring AnsiToWString(const std::string& str)
 {
