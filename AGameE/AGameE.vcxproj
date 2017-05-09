@@ -19,13 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Actor\Actor.cpp" />
+    <ClCompile Include="Source\Actor\ActorFactory.cpp" />
     <ClCompile Include="Source\Common\Utility.cpp" />
     <ClCompile Include="Source\Debug\Exception.cpp" />
     <ClCompile Include="Source\Main\Init.cpp" />
     <ClCompile Include="Source\Main\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Actor\Actor.h" />
+    <ClInclude Include="Source\Actor\ActorFactory.h" />
     <ClInclude Include="Source\Common\Utility.h" />
+    <ClInclude Include="Source\Common\Vectors.h" />
     <ClInclude Include="Source\Debug\Debugger.h" />
     <ClInclude Include="Source\Debug\Exception.h" />
     <ClInclude Include="Source\Debug\Logger.h" />
