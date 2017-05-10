@@ -28,12 +28,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Actor\Actor.h" />
+    <ClInclude Include="Source\Actor\ActorComponent.h" />
     <ClInclude Include="Source\Actor\ActorFactory.h" />
+    <ClInclude Include="Source\Common\TypeDef.h" />
     <ClInclude Include="Source\Common\Utility.h" />
     <ClInclude Include="Source\Common\Vectors.h" />
     <ClInclude Include="Source\Debug\Debugger.h" />
     <ClInclude Include="Source\Debug\Exception.h" />
     <ClInclude Include="Source\Debug\Logger.h" />
+    <ClInclude Include="Source\Debug\MathHelper.h" />
     <ClInclude Include="Source\Main\Init.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -93,6 +96,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>F:\tinyxml;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

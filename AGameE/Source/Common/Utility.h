@@ -6,6 +6,10 @@
 #include<string>
 #include<cassert>
 #include<WinUser.h>
+#include<tinyxml.h>
+#include"TypeDef.h"
+#include<map>
+#include<memory>
 
 inline std::wstring AnsiToWString(const std::string& str)
 {

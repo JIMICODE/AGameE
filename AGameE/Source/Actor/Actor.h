@@ -7,16 +7,7 @@
 #define ACTOR_H_
 
 #include"..\Common\Vectors.h"
-#include"ActorFactory.h"
-
-typedef int ActorId;
-
-enum ActorType {
-	RenderComponent,
-	AudioComponent,
-	Player,
-	Enemy
-};
+#include"..\Common\Utility.h"
 
 class Actor
 {
@@ -30,11 +21,16 @@ protected:
 	virtual bool Init(ActorId Id, ActorType Type, Vec3 Position = Vec3());
 
 public:
+	explicit Actor(ActorId id);
+	~Actor();
+
+	//Accessors
 	const Vec3& GetPosition() const { return mPosition; }
-	const ActorId GetID() const { return mId; }
+	const ActorId GetId() const { return mId; }
 
-	virtual ~Actor();
-
+	bool Init(TiXmlElement* pData);
+	bool Destroy();
+	bool Update();
 private:
 	Actor();
 };

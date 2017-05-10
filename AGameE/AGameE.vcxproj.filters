@@ -22,5 +22,8 @@
     <ClInclude Include="Source\Actor\Actor.h" />
     <ClInclude Include="Source\Actor\ActorFactory.h" />
     <ClInclude Include="Source\Common\Vectors.h" />
+    <ClInclude Include="Source\Actor\ActorComponent.h" />
+    <ClInclude Include="Source\Common\TypeDef.h" />
+    <ClInclude Include="Source\Debug\MathHelper.h" />
   </ItemGroup>
 </Project>

@@ -2,14 +2,7 @@
 #ifndef VECTORS_H_
 #define VECTORS_H_
 
-class Vev2
-{
-
-};
-
-class Vec3
-{
-
-};
+typedef int Vec2;
+typedef int Vec3;
 
 #endif // !VECTORS_H_
