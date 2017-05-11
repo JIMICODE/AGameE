@@ -10,6 +10,8 @@
 #include"TypeDef.h"
 #include<map>
 #include<memory>
+#include"Timer.h"
+#include<map>
 
 inline std::wstring AnsiToWString(const std::string& str)
 {

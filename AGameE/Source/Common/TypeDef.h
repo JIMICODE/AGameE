@@ -13,4 +13,9 @@ enum ActorType {
 	Unknow
 };
 
+enum ActorComponentType
+{
+	Unknow
+};
+
 #endif // !TYPEDEF_H_

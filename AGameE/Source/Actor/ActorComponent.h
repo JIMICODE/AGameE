@@ -1,22 +1,23 @@
 #pragma once
 #ifndef ACTORCOMPONENT_H_
 #define ACTORCOMPONENT_H_
-//#include"ActorFactory.h"
 
 class ActorComponent
 {
 	friend class ActorFactory;
-
 protected:
 	StrongActorPtr mpOwner;
 
 public:
 	virtual ~ActorComponent() {}
 
-	//These functions are meant to be overridden by the implementation
-	//classed of the components.
-	virtual bool VInit() = 0;
-	virtual void VUpdate();
+	//These functions are meants to be overridden by the implementation
+	//classes of the component.
+	virtual bool VInit(TiXmlElement* pData) = 0;
+	virtual void VUpdate(const Timer& timer) {}
+
+	//This function should be overridden by the interface class.
+	virtual ComponentId VGetComponentId()const = 0;
 
 private:
 	void SetOwner(StrongActorPtr pOwner) { mpOwner = pOwner; }
