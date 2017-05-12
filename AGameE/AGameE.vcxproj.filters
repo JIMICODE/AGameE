@@ -13,6 +13,7 @@
     <ClCompile Include="Source\Actor\ActorFactory.cpp" />
     <ClCompile Include="Source\Common\Timer.cpp" />
     <ClCompile Include="Source\Actor\Actor.cpp" />
+    <ClCompile Include="Source\Process\ProcessManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Common\Utility.h" />
@@ -27,5 +28,7 @@
     <ClInclude Include="Source\Debug\MathHelper.h" />
     <ClInclude Include="Source\Common\Timer.h" />
     <ClInclude Include="Source\Actor\ActorComponent.h" />
+    <ClInclude Include="Source\Process\Process.h" />
+    <ClInclude Include="Source\Process\ProcessManager.h" />
   </ItemGroup>
 </Project>
