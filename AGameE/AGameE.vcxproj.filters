@@ -30,5 +30,6 @@
     <ClInclude Include="Source\Actor\ActorComponent.h" />
     <ClInclude Include="Source\Process\Process.h" />
     <ClInclude Include="Source\Process\ProcessManager.h" />
+    <ClInclude Include="Source\Input\Input.h" />
   </ItemGroup>
 </Project>

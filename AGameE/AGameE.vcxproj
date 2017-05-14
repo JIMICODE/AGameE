@@ -40,6 +40,7 @@
     <ClInclude Include="Source\Debug\Exception.h" />
     <ClInclude Include="Source\Debug\Logger.h" />
     <ClInclude Include="Source\Debug\MathHelper.h" />
+    <ClInclude Include="Source\Input\Input.h" />
     <ClInclude Include="Source\Main\Init.h" />
     <ClInclude Include="Source\Process\Process.h" />
     <ClInclude Include="Source\Process\ProcessManager.h" />
