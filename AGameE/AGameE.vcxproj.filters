@@ -14,6 +14,8 @@
     <ClCompile Include="Source\Common\Timer.cpp" />
     <ClCompile Include="Source\Actor\Actor.cpp" />
     <ClCompile Include="Source\Process\ProcessManager.cpp" />
+    <ClCompile Include="Source\Sound\DirectSound.cpp" />
+    <ClCompile Include="Source\Sound\Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Common\Utility.h" />
@@ -31,5 +33,7 @@
     <ClInclude Include="Source\Process\Process.h" />
     <ClInclude Include="Source\Process\ProcessManager.h" />
     <ClInclude Include="Source\Input\Input.h" />
+    <ClInclude Include="Source\Sound\Sound.h" />
+    <ClInclude Include="Source\Sound\DirectSound.h" />
   </ItemGroup>
 </Project>

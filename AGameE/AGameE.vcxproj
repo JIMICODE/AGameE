@@ -27,6 +27,8 @@
     <ClCompile Include="Source\Main\Init.cpp" />
     <ClCompile Include="Source\Main\Main.cpp" />
     <ClCompile Include="Source\Process\ProcessManager.cpp" />
+    <ClCompile Include="Source\Sound\DirectSound.cpp" />
+    <ClCompile Include="Source\Sound\Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Actor\Actor.h" />
@@ -44,6 +46,8 @@
     <ClInclude Include="Source\Main\Init.h" />
     <ClInclude Include="Source\Process\Process.h" />
     <ClInclude Include="Source\Process\ProcessManager.h" />
+    <ClInclude Include="Source\Sound\DirectSound.h" />
+    <ClInclude Include="Source\Sound\Sound.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
