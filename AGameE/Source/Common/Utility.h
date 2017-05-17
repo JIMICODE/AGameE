@@ -13,6 +13,7 @@
 #include"Timer.h"
 #include<map>
 #include<list>
+#include<strstream>
 
 inline std::wstring AnsiToWString(const std::string& str)
 {

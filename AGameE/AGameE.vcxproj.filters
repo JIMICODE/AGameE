@@ -35,5 +35,7 @@
     <ClInclude Include="Source\Input\Input.h" />
     <ClInclude Include="Source\Sound\Sound.h" />
     <ClInclude Include="Source\Sound\DirectSound.h" />
+    <ClInclude Include="Source\Event\EventData.h" />
+    <ClInclude Include="Source\Event\EvtData_Destroy_Actor.h" />
   </ItemGroup>
 </Project>

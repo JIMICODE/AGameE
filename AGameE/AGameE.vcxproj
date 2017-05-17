@@ -42,6 +42,8 @@
     <ClInclude Include="Source\Debug\Exception.h" />
     <ClInclude Include="Source\Debug\Logger.h" />
     <ClInclude Include="Source\Debug\MathHelper.h" />
+    <ClInclude Include="Source\Event\EventData.h" />
+    <ClInclude Include="Source\Event\EvtData_Destroy_Actor.h" />
     <ClInclude Include="Source\Input\Input.h" />
     <ClInclude Include="Source\Main\Init.h" />
     <ClInclude Include="Source\Process\Process.h" />
