@@ -16,6 +16,7 @@
     <ClCompile Include="Source\Process\ProcessManager.cpp" />
     <ClCompile Include="Source\Sound\DirectSound.cpp" />
     <ClCompile Include="Source\Sound\Sound.cpp" />
+    <ClCompile Include="Source\Event\EventManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Common\Utility.h" />
@@ -37,5 +38,6 @@
     <ClInclude Include="Source\Sound\DirectSound.h" />
     <ClInclude Include="Source\Event\EventData.h" />
     <ClInclude Include="Source\Event\EvtData_Destroy_Actor.h" />
+    <ClInclude Include="Source\Event\EventManager.h" />
   </ItemGroup>
 </Project>

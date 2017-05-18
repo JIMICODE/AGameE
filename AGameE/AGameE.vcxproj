@@ -24,6 +24,7 @@
     <ClCompile Include="Source\Common\Timer.cpp" />
     <ClCompile Include="Source\Common\Utility.cpp" />
     <ClCompile Include="Source\Debug\Exception.cpp" />
+    <ClCompile Include="Source\Event\EventManager.cpp" />
     <ClCompile Include="Source\Main\Init.cpp" />
     <ClCompile Include="Source\Main\Main.cpp" />
     <ClCompile Include="Source\Process\ProcessManager.cpp" />
@@ -43,6 +44,7 @@
     <ClInclude Include="Source\Debug\Logger.h" />
     <ClInclude Include="Source\Debug\MathHelper.h" />
     <ClInclude Include="Source\Event\EventData.h" />
+    <ClInclude Include="Source\Event\EventManager.h" />
     <ClInclude Include="Source\Event\EvtData_Destroy_Actor.h" />
     <ClInclude Include="Source\Input\Input.h" />
     <ClInclude Include="Source\Main\Init.h" />
