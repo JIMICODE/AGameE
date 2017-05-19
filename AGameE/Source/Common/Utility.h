@@ -15,6 +15,7 @@
 #include<list>
 #include<strstream>
 #include<functional>
+#include<optional>
 
 inline std::wstring AnsiToWString(const std::string& str)
 {

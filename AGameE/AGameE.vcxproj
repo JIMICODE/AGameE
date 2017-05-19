@@ -50,6 +50,8 @@
     <ClInclude Include="Source\Main\Init.h" />
     <ClInclude Include="Source\Process\Process.h" />
     <ClInclude Include="Source\Process\ProcessManager.h" />
+    <ClInclude Include="Source\Resource\Resource.h" />
+    <ClInclude Include="Source\Resource\ZipFile.h" />
     <ClInclude Include="Source\Sound\DirectSound.h" />
     <ClInclude Include="Source\Sound\Sound.h" />
   </ItemGroup>
@@ -110,7 +112,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\tinyxml;$(IncludePath)</IncludePath>
+    <IncludePath>F:\zlib-1.2.11;F:\tinyxml;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

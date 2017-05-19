@@ -39,5 +39,7 @@
     <ClInclude Include="Source\Event\EventData.h" />
     <ClInclude Include="Source\Event\EvtData_Destroy_Actor.h" />
     <ClInclude Include="Source\Event\EventManager.h" />
+    <ClInclude Include="Source\Resource\ZipFile.h" />
+    <ClInclude Include="Source\Resource\Resource.h" />
   </ItemGroup>
 </Project>
