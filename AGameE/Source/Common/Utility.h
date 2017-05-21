@@ -17,6 +17,9 @@
 #include<functional>
 #include<optional>
 
+#define SAFE_DELETE(x) delete(x)
+#define SAFE_DELETE_ARRAY(x) delete[](x)
+
 inline std::wstring AnsiToWString(const std::string& str)
 {
 	WCHAR  buffer[512];
