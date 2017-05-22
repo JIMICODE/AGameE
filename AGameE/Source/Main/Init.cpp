@@ -1,30 +1,30 @@
 #include "Init.h"
 
-EngineMain* EngineMain::pEMainIns = nullptr;
+InitEngine* InitEngine::pEMainIns = nullptr;
 
-EngineMain* EngineMain::GetEMainIns()
+InitEngine* InitEngine::GetEMainIns()
 {
 	return pEMainIns;
 }
 
 LRESULT CALLBACK MainWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-	return EngineMain::GetEMainIns()->MsgProc(hwnd, msg, wParam, lParam);
+	return InitEngine::GetEMainIns()->MsgProc(hwnd, msg, wParam, lParam);
 }
 
-EngineMain::EngineMain(HINSTANCE Instance)
+InitEngine::InitEngine(HINSTANCE Instance):m_Sound()
 {
 	assert(pEMainIns == nullptr);
 	pEMainIns = this;
 }
 
-void EngineMain::SetAspectRatio(UINT Width, UINT Height)
+void InitEngine::SetAspectRatio(UINT Width, UINT Height)
 {
 	mWidth = Width;
 	mHeight = Height;
 }
 
-bool EngineMain::InitMainWindow()
+bool InitEngine::InitMainWindow()
 {
 	WNDCLASS wc;
 	wc.style			= CS_HREDRAW | CS_VREDRAW;
@@ -50,22 +50,33 @@ bool EngineMain::InitMainWindow()
 	int width = R.right - R.left;
 	int height = R.bottom - R.top;
 
-	mhMainwnd = CreateWindow(L"MainWnd", mMainWndCaption.c_str(), WS_OVERLAPPEDWINDOW,
+	m_hMainwnd = CreateWindow(L"MainWnd", mMainWndCaption.c_str(), WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, CW_USEDEFAULT, width, height, nullptr, 0, mhMainIns, nullptr);
 
-	if (!mhMainwnd)
+	if (!m_hMainwnd)
 	{
 		MessageBox(0, L"CreateWubdiw Failed.", 0, 0);
 		return false;
 	}
 
-	ShowWindow(mhMainwnd, SW_SHOW);
-	UpdateWindow(mhMainwnd);
+	ShowWindow(m_hMainwnd, SW_SHOW);
+	UpdateWindow(m_hMainwnd);
 
 	return true;
 }
 
-int EngineMain::Run()
+bool InitEngine::InitSoundSys()
+{
+	
+	return m_Sound.DirectSound_Init(m_hMainwnd);
+}
+
+void InitEngine::SoundSys_Shutdown()
+{
+	m_Sound.DirectSound_Shutdown();
+}
+
+int InitEngine::Run()
 {
 	MSG msg = { 0 };
 
@@ -86,17 +97,17 @@ int EngineMain::Run()
 	return (int)msg.wParam;
 }
 
-HINSTANCE EngineMain::GetMainIns() const
+HINSTANCE InitEngine::GetMainIns() const
 {
 	return mhMainIns;
 }
 
-HWND EngineMain::GetMainHwnd() const
+HWND InitEngine::GetMainHwnd() const
 {
-	return mhMainwnd;
+	return m_hMainwnd;
 }
 
-float EngineMain::GetASpectRatio() const
+float InitEngine::GetASpectRatio() const
 {
 	return mAspectRatio;
 }
@@ -106,7 +117,7 @@ float EngineMain::GetASpectRatio() const
 	return pEMainIns;
 }*/
 
-LRESULT EngineMain::MsgProc(HWND Hwnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+LRESULT InitEngine::MsgProc(HWND Hwnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (Msg)
 	{
@@ -139,17 +150,17 @@ LRESULT EngineMain::MsgProc(HWND Hwnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 	return DefWindowProc(Hwnd, Msg, wParam, lParam);
 }
 
-void EngineMain::OnMouseMove(WPARAM BtnState, int X, int Y)
+void InitEngine::OnMouseMove(WPARAM BtnState, int X, int Y)
 {
 	//To do...
 }
 
-void EngineMain::OnMouseUp(WPARAM BtnState, int X, int Y)
+void InitEngine::OnMouseUp(WPARAM BtnState, int X, int Y)
 {
 	//TO do...
 }
 
-void EngineMain::OnMouseDown(WPARAM BtnState, int X, int Y)
+void InitEngine::OnMouseDown(WPARAM BtnState, int X, int Y)
 {
 	//To do...
 }

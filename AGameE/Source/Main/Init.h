@@ -7,14 +7,20 @@
 #include<windowsx.h>
 #include<string>
 #include"..\Common\Utility.h"
+#include"..\Sound\Sound.h"
 
-class EngineMain
+class InitEngine
 {
 public:
-	EngineMain(HINSTANCE Instance);
+	InitEngine(HINSTANCE Instance);
 	//Set width and height befor the InitMainWindow() has been used.
 	void SetAspectRatio(UINT Width, UINT Height);
 	bool InitMainWindow();
+	bool InitSoundSys();
+	bool InitInput();
+	bool InitOutput();
+
+	void SoundSys_Shutdown();
 	int Run();
 	//process window message.
 	virtual LRESULT MsgProc(HWND Hwnd, UINT Msg, WPARAM wParam, LPARAM lParam);
@@ -25,17 +31,19 @@ public:
 	HWND GetMainHwnd()const;
 	float GetASpectRatio()const;
 	
-	static EngineMain* GetEMainIns();
+	static InitEngine* GetEMainIns();
 
 protected:
 
-	static EngineMain* pEMainIns;
+	static InitEngine* pEMainIns;
 	
 	HINSTANCE mhMainIns = nullptr; //Application instance handle.
-	HWND mhMainwnd = nullptr;	  //Main window handle.
+	HWND m_hMainwnd = nullptr;	  //Main window handle.
 	float mAspectRatio = 0.0f;	  //Aspect ratio of window.
 	UINT mWidth = 800;
 	UINT mHeight = 600;
+
+	SoundSys m_Sound;
 
 	std::wstring mMainWndCaption = L"Main Window";
 

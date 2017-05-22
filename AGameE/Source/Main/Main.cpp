@@ -6,7 +6,7 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreInstance, PSTR lpCmdLine, int nCmdShow)
 {
-	EngineMain* theTest = new EngineMain(hInstance);
+	InitEngine* theTest = new InitEngine(hInstance);
 
 	if (theTest)
 	{
