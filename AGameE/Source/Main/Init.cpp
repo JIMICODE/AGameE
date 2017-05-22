@@ -12,7 +12,7 @@ LRESULT CALLBACK MainWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return InitEngine::GetEMainIns()->MsgProc(hwnd, msg, wParam, lParam);
 }
 
-InitEngine::InitEngine(HINSTANCE Instance):m_Sound()
+InitEngine::InitEngine(HINSTANCE Instance):m_Sound(), m_Input()
 {
 	assert(pEMainIns == nullptr);
 	pEMainIns = this;
@@ -22,6 +22,13 @@ void InitEngine::SetAspectRatio(UINT Width, UINT Height)
 {
 	mWidth = Width;
 	mHeight = Height;
+}
+
+void InitEngine::Initialization()
+{
+	ThrowIfFailed(InitMainWindow());
+	ThrowIfFailed(InitSoundSys());
+	ThrowIfFailed(InitInput());
 }
 
 bool InitEngine::InitMainWindow()
@@ -69,6 +76,11 @@ bool InitEngine::InitSoundSys()
 {
 	
 	return m_Sound.DirectSound_Init(m_hMainwnd);
+}
+
+bool InitEngine::InitInput()
+{
+	return (m_Input.DirectInput_Init(m_hMainwnd)&&m_Input.XInput_Init());
 }
 
 void InitEngine::SoundSys_Shutdown()

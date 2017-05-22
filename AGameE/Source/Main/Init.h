@@ -8,6 +8,7 @@
 #include<string>
 #include"..\Common\Utility.h"
 #include"..\Sound\Sound.h"
+#include"..\Input\Input.h"
 
 class InitEngine
 {
@@ -15,10 +16,13 @@ public:
 	InitEngine(HINSTANCE Instance);
 	//Set width and height befor the InitMainWindow() has been used.
 	void SetAspectRatio(UINT Width, UINT Height);
+
+	//Intializations function
+	void Initialization();
 	bool InitMainWindow();
 	bool InitSoundSys();
 	bool InitInput();
-	bool InitOutput();
+	//bool InitOutput();
 
 	void SoundSys_Shutdown();
 	int Run();
@@ -44,6 +48,7 @@ protected:
 	UINT mHeight = 600;
 
 	SoundSys m_Sound;
+	Input m_Input;
 
 	std::wstring mMainWndCaption = L"Main Window";
 

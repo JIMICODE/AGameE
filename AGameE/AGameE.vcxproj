@@ -25,6 +25,7 @@
     <ClCompile Include="Source\Common\Utility.cpp" />
     <ClCompile Include="Source\Debug\Exception.cpp" />
     <ClCompile Include="Source\Event\EventManager.cpp" />
+    <ClCompile Include="Source\Input\Input.cpp" />
     <ClCompile Include="Source\Main\Init.cpp" />
     <ClCompile Include="Source\Main\Main.cpp" />
     <ClCompile Include="Source\Process\ProcessManager.cpp" />

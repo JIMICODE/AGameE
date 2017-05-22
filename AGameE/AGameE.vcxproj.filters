@@ -18,6 +18,7 @@
     <ClCompile Include="Source\Sound\Sound.cpp" />
     <ClCompile Include="Source\Event\EventManager.cpp" />
     <ClCompile Include="Source\Resource\ResourceFile.cpp" />
+    <ClCompile Include="Source\Input\Input.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Common\Utility.h" />

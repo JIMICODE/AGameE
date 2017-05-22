@@ -169,3 +169,7 @@ bool EventManager::VTickUpdate(unsigned long maxMillis)
 	}
 	return queueFlushed;
 }
+
+IEventManager * IEventManager::Get(void)
+{
+}

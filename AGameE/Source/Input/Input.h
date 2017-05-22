@@ -11,160 +11,44 @@
 
 #define KEY_DOWN(vk_code) ((GetAsyncKeyState(vk_code) & 0x8000) ? 1 : 0)
 
-LPDIRECTINPUT8 gDInput;
-LPDIRECTINPUTDEVICE8 gDIMouse;
-LPDIRECTINPUTDEVICE8 gDIKeyboard;
-DIMOUSESTATE gMouseSTate;
-XINPUT_GAMEPAD gControllers[4];
-char gKey[256];
-
-//Initialize XInput and any connected controllers
-bool XInput_Init(int contNum = 0)
+class Input
 {
-	XINPUT_CAPABILITIES caps;
-	ZeroMemory(&caps, sizeof(XINPUT_CAPABILITIES));
-	XInputGetCapabilities(contNum, XINPUT_FLAG_GAMEPAD, &caps);
+	friend class InitEngine;
+private:
+	//constructor
+	Input();
+public:
+	//Initialize XInput and any connected controllers
+	bool XInput_Init(int contNum = 0);
+	//Cause the controller to vibrate
+	void XInput_Vibrate(int contNum = 0, int left = 65535, int right = 65535);
+	//Checks the state of the controller
+	void XInput_Update();
 
-	if (caps.Type != XINPUT_DEVTYPE_GAMEPAD)
-		return false;
+	bool DirectInput_Init(HWND hwnd);
+	void DirectInput_Update();
+	//DirectInput shutdown
+	void DirectInput_Shutdown();
 
-	return true;
-}
+	//return mouse x movement
+	int MouseX()	{ return m_MouseSTate.lX; }
+	//return mouse y movement
+	int MouseY()	{ return m_MouseSTate.lY; }
+	//return mouse button state
+	int MouseButton(int button)	{ return m_MouseSTate.rgbButtons[button] & 0x80; }
+	//return key press state
+	int KeyDown(int key)	{ return (m_Keys[key] & 0x80); }
 
-//Cause the controller to vibrate
-void XInput_Vibrate(int contNum = 0, int left = 65535, int right = 65535)
-{
-	XINPUT_VIBRATION vibration;
-	ZeroMemory(&vibration, sizeof(XINPUT_VIBRATION));
-	vibration.wLeftMotorSpeed = left;
-	vibration.wRightMotorSpeed = right;
-	XInputSetState(contNum, &vibration);
-}
+	Input(Input& rhs) = delete;
+	Input operator=(Input& rhs) = delete;
 
-//Checks the state of the controller
-void XInput_Update()
-{
-	XINPUT_STATE state;
-
-	for (int i = 0; i < 4; ++i)
-	{
-		ZeroMemory(&state, sizeof(XINPUT_STATE));
-
-		//get the state of the controller
-		DWORD result = XInputGetState(i, &state);
-
-		//is controller connected?
-		if (result == 0)
-		{
-			if (state.Gamepad.bLeftTrigger)
-				break;
-			else if (state.Gamepad.bRightTrigger)
-				break;
-			else if (state.Gamepad.sThumbLX < -10000 || state.Gamepad.sThumbLX > 10000)
-				break;
-			else if (state.Gamepad.sThumbRX < -10000 || state.Gamepad.sThumbRX > 10000)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_UP)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_DOWN)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_LEFT)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_RIGHT)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_START)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_LEFT_THUMB)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_RIGHT_THUMB)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_LEFT_SHOULDER)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_RIGHT_SHOULDER)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_A)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_B)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_X)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_Y)
-				break;
-			else if (state.Gamepad.wButtons & XINPUT_GAMEPAD_BACK)
-				break;
-		}
-	}
-}
-
-bool DirectInput_Init(HWND hwnd)
-{
-	//initialize DirectInput object;
-	HRESULT r = DirectInput8Create(
-		GetModuleHandle(NULL),
-		DIRECTINPUT_VERSION,
-		IID_IDirectInput8,
-		(void**)&gDInput,
-		NULL
-	);
-
-	//initialize the keyboard
-	gDInput->CreateDevice(GUID_SysKeyboard, &gDIKeyboard, NULL);
-	gDIKeyboard->SetDataFormat(&c_dfDIKeyboard);
-	gDIKeyboard->SetCooperativeLevel(hwnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
-	gDIKeyboard->Acquire();
-
-	//initialize the mouse
-	gDInput->CreateDevice(GUID_SysMouse, &gDIMouse, NULL);
-	gDIMouse->SetDataFormat(&c_dfDIMouse);
-	gDIMouse->SetCooperativeLevel(hwnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
-	gDIMouse->Acquire();
-	
-	return true;
-}
-
-void DirectInput_Update()
-{
-	//update mouse
-	gDIMouse->GetDeviceState(sizeof(gMouseSTate), (LPVOID)&gMouseSTate);
-	//update keyboard
-	gDIKeyboard->GetDeviceState(sizeof(gKey), (LPVOID)&gKey);
-}
-
-//return mouse x movement
-int MouseX()
-{
-	return gMouseSTate.lX;
-}
-//return mouse y movement
-int MouseY()
-{
-	return gMouseSTate.lY;
-}
-//return mouse button state
-int MouseButton(int button)
-{
-	return gMouseSTate.rgbButtons[button] & 0x80;
-}
-//return key press state
-int KeyDown(int key)
-{
-	return (gKey[key] & 0x80);
-}
-//DirectInput shutdown
-void DirectInput_Shutdown()
-{
-	if (gDIKeyboard)
-	{
-		gDIKeyboard->Unacquire();
-		gDIKeyboard->Release();
-		gDIKeyboard = NULL;
-	}
-	if (gDIMouse)
-	{
-		gDIMouse->Unacquire();
-		gDIMouse->Release();
-		gDIMouse = NULL;
-	}
-}
-
+	~Input();
+private:
+	LPDIRECTINPUT8 m_DInput;
+	LPDIRECTINPUTDEVICE8 m_DIMouse;
+	LPDIRECTINPUTDEVICE8 m_DIKeyboard;
+	DIMOUSESTATE m_MouseSTate;
+	XINPUT_GAMEPAD m_Controllers[4];
+	char m_Keys[256];
+};
 #endif // !INPUT_H_

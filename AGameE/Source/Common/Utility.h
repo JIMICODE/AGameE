@@ -16,6 +16,7 @@
 #include<strstream>
 #include<functional>
 #include<optional>
+#include"..\Debug\Debugger.h"
 
 #define SAFE_DELETE(x) delete(x)
 #define SAFE_DELETE_ARRAY(x) delete[](x)
