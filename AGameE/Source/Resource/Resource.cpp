@@ -26,11 +26,11 @@ std::shared_ptr<ResHandle> ResCache::Load(Resource * r)
 		it != m_resourceLoaders.end(); ++it)
 	{
 		shared_ptr<IResourceLoader> testLoader = *it;
-		if (WildcarMath(testLoader->VGetPattern().c_str(), r->m_name.c_str()))
-		{
-			loader = testLoader;
-			break;
-		}
+		//if (WildcarMath(testLoader->VGetPattern().c_str(), r->m_name.c_str()))
+		//{
+		//	loader = testLoader;
+		//	break;
+		//}
 	}
 
 	if (!loader)

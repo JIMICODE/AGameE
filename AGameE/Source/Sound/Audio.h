@@ -1,6 +1,6 @@
 #pragma once
-#ifndef SOUND_H_
-#define SOUND_H_
+#ifndef AUDIO_H_
+#define AUDIO_H_
 
 #include"DirectSound.h"
 #pragma comment(lib, "dsound.lib")
@@ -25,4 +25,4 @@ public:
 
 	~SoundSys();
 };
-#endif // !SOUND_H_
+#endif // !AUDIO_H_

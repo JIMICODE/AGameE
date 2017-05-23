@@ -15,10 +15,11 @@
     <ClCompile Include="Source\Actor\Actor.cpp" />
     <ClCompile Include="Source\Process\ProcessManager.cpp" />
     <ClCompile Include="Source\Sound\DirectSound.cpp" />
-    <ClCompile Include="Source\Sound\Sound.cpp" />
     <ClCompile Include="Source\Event\EventManager.cpp" />
-    <ClCompile Include="Source\Resource\ResourceFile.cpp" />
     <ClCompile Include="Source\Input\Input.cpp" />
+    <ClCompile Include="Source\Sound\Audio.cpp" />
+    <ClCompile Include="Source\Resource\Resource.cpp" />
+    <ClCompile Include="Source\Sound\SoundResource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Common\Utility.h" />
@@ -36,13 +37,14 @@
     <ClInclude Include="Source\Process\Process.h" />
     <ClInclude Include="Source\Process\ProcessManager.h" />
     <ClInclude Include="Source\Input\Input.h" />
-    <ClInclude Include="Source\Sound\Sound.h" />
     <ClInclude Include="Source\Sound\DirectSound.h" />
     <ClInclude Include="Source\Event\EventData.h" />
     <ClInclude Include="Source\Event\EvtData_Destroy_Actor.h" />
     <ClInclude Include="Source\Event\EventManager.h" />
     <ClInclude Include="Source\Resource\ZipFile.h" />
+    <ClInclude Include="Source\Sound\Audio.h" />
+    <ClInclude Include="Source\Sound\AudioBuffer.h" />
+    <ClInclude Include="Source\Sound\SoundResource.h" />
     <ClInclude Include="Source\Resource\Resource.h" />
-    <ClInclude Include="Source\Resource\ResourceFile.h" />
   </ItemGroup>
 </Project>
