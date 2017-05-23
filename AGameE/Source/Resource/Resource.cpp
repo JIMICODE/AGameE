@@ -1,15 +1,8 @@
-#include "ResourceFile.h"
+#include"Resource.h"
 
 using namespace std;
 
-ResHandle::ResHandle(Resource & resource, char * buffer, unsigned int size, ResCache * pResCache)
-	: m_resource(resource)
-{
-	m_buffer = buffer;
-	m_size = size;
-	m_extra = nullptr;
-	m_pResCache = pResCache;
-}
+
 
 ResHandle::~ResHandle()
 {

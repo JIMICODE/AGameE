@@ -2,7 +2,7 @@
 #ifndef RESOURCE_H_
 #define RESOURCE_H_
 
-#include"Resource.h"
+#include"..\Common\Utility.h"
 
 class IResourceFile
 {
@@ -32,7 +32,14 @@ protected:
 	ResCache *m_pResCache;
 
 public:
-	ResHandle(Resource &resource, char *buffer, unsigned int size, ResCache *pResCache);
+	ResHandle::ResHandle(Resource &resource, char *buffer, unsigned int size, ResCache *pResCache)
+		: m_resource(resource)
+	{
+		m_buffer = buffer;
+		m_size = size;
+		m_extra = nullptr;
+		m_pResCache = pResCache;
+	}
 	virtual ~ResHandle();
 
 	unsigned int Size() const { return m_size; }
