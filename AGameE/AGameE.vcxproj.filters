@@ -20,6 +20,7 @@
     <ClCompile Include="Source\Sound\Audio.cpp" />
     <ClCompile Include="Source\Resource\Resource.cpp" />
     <ClCompile Include="Source\Sound\SoundResource.cpp" />
+    <ClCompile Include="Source\Process\SoundProcess.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Common\Utility.h" />
@@ -46,5 +47,6 @@
     <ClInclude Include="Source\Sound\AudioBuffer.h" />
     <ClInclude Include="Source\Sound\SoundResource.h" />
     <ClInclude Include="Source\Resource\Resource.h" />
+    <ClInclude Include="Source\Process\SoundProcess.h" />
   </ItemGroup>
 </Project>

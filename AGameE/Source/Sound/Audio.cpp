@@ -1,4 +1,4 @@
-#include "Sound.h"
+#include "Audio.h"
 
 using namespace std;
 
@@ -55,4 +55,59 @@ std::shared_ptr<CSound> SoundSys::LoadSound(std::string filename)
 
 	//return the wave
 	return shared_ptr<CSound>(wave);
+}
+
+void Audio::VShutdown()
+{
+	AudioBufferList::iterator i = m_AllSamples.begin();
+
+	while (i != m_AllSamples.end())
+	{
+		IAudioBuffer *audioBuffer = (*i);
+		audioBuffer->VStop();
+		m_AllSamples.pop_front();
+	}
+}
+
+//Stop all active sounds, including music
+void Audio::VPauseAllSounds()
+{
+	AudioBufferList::iterator i = m_AllSamples.begin();
+	AudioBufferList::iterator end = m_AllSamples.end();
+	for (; i != end; ++i)
+	{
+		IAudioBuffer *audioBuffer = (*i);
+		audioBuffer->VPause();
+	}
+	m_AllPaused = true;
+}
+
+void Audio::VResumeAllSounds()
+{
+	AudioBufferList::iterator i = m_AllSamples.begin();
+	AudioBufferList::iterator end = m_AllSamples.end();
+
+	for (; i != end; ++i)
+	{
+		IAudioBuffer *audioBuffer = (*i);
+		audioBuffer->VResume();
+	}
+	m_AllPaused = false;
+}
+
+void Audio::VStopAllSounds()
+{
+	IAudioBuffer *audioBuffer = nullptr;
+
+	AudioBufferList::iterator i = m_AllSamples.begin();
+	AudioBufferList::iterator end = m_AllSamples.end();
+
+	for (; i != end; ++i)
+	{
+		audioBuffer = (*i);
+		audioBuffer->VStop();
+	}
+
+	m_AllPaused = false;
+
 }

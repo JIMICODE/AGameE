@@ -29,6 +29,7 @@
     <ClCompile Include="Source\Main\Init.cpp" />
     <ClCompile Include="Source\Main\Main.cpp" />
     <ClCompile Include="Source\Process\ProcessManager.cpp" />
+    <ClCompile Include="Source\Process\SoundProcess.cpp" />
     <ClCompile Include="Source\Resource\Resource.cpp" />
     <ClCompile Include="Source\Sound\DirectSound.cpp" />
     <ClCompile Include="Source\Sound\Audio.cpp" />
@@ -53,6 +54,7 @@
     <ClInclude Include="Source\Main\Init.h" />
     <ClInclude Include="Source\Process\Process.h" />
     <ClInclude Include="Source\Process\ProcessManager.h" />
+    <ClInclude Include="Source\Process\SoundProcess.h" />
     <ClInclude Include="Source\Resource\Resource.h" />
     <ClInclude Include="Source\Resource\ZipFile.h" />
     <ClInclude Include="Source\Sound\AudioBuffer.h" />
