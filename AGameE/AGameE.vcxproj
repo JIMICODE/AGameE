@@ -24,6 +24,7 @@
     <ClCompile Include="Source\Common\Math.cpp" />
     <ClCompile Include="Source\Common\Timer.cpp" />
     <ClCompile Include="Source\Common\Utility.cpp" />
+    <ClCompile Include="Source\D3D\MathHelper.cpp" />
     <ClCompile Include="Source\Debug\Exception.cpp" />
     <ClCompile Include="Source\Event\EventManager.cpp" />
     <ClCompile Include="Source\Input\Input.cpp" />
@@ -45,6 +46,8 @@
     <ClInclude Include="Source\Common\TypeDef.h" />
     <ClInclude Include="Source\Common\Utility.h" />
     <ClInclude Include="Source\Common\Vectors.h" />
+    <ClInclude Include="Source\D3D\d3dUtil.h" />
+    <ClInclude Include="Source\D3D\MathHelper.h" />
     <ClInclude Include="Source\Debug\Debugger.h" />
     <ClInclude Include="Source\Debug\Exception.h" />
     <ClInclude Include="Source\Debug\Logger.h" />

@@ -22,6 +22,7 @@
     <ClCompile Include="Source\Sound\SoundResource.cpp" />
     <ClCompile Include="Source\Process\SoundProcess.cpp" />
     <ClCompile Include="Source\Common\Math.cpp" />
+    <ClCompile Include="Source\D3D\MathHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Common\Utility.h" />
@@ -50,5 +51,7 @@
     <ClInclude Include="Source\Resource\Resource.h" />
     <ClInclude Include="Source\Process\SoundProcess.h" />
     <ClInclude Include="Source\Common\Math.h" />
+    <ClInclude Include="Source\D3D\d3dUtil.h" />
+    <ClInclude Include="Source\D3D\MathHelper.h" />
   </ItemGroup>
 </Project>
